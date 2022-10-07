@@ -148,6 +148,7 @@ section{
         display: none !important;
         li{
             width: 100%;
+
         }
     }
     .navbar-collapse .main-menu .menu_has_children.show .sub-menu ,
@@ -179,14 +180,6 @@ section{
       opacity: 1;
       visibility: visible;
       top: 120%;
-  }
-  &.menu_has_children:hover a{
-    color: $white;
-  }
-  &.menu_has_children a{
-    &:hover{
-      color: $white;
-    }
   }
   &:hover{
     .toggle-bar{
@@ -225,92 +218,14 @@ section{
     }
   }
 }
-.search-bar{
-  margin-left: 40px;
-  margin-right: 40px;
-  a{
-    font-size: 16px;
-    color: #dfdfdf;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    border-radius: 50%;
-    text-align: center;
-  }
-}
-.dark{
-  .search-bar{
-    margin-left: 40px;
-    margin-right: 20px;
-  }
-}
+
 .page-wrapper-two{
   .header-right{
     padding-left: 0 !important;
     margin-right: 0;
   }
-  .search-bar{
-    a{
-      color: $color__heading;
-    }
-  }
 }
-.header-top-search-area {
-  position: absolute;
-  top: 108%;
-  width: 350px;
-  right: 0%;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 999;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-@media (max-width: 575px) {
-  .header-top-search-area {
-      width: 100%;
-  }
-}
-.header-top-search-area.open {
-  opacity: 1;
-  visibility: visible;
-}
-.active.header-top-search-area {
-  opacity: 1;
-  visibility: visible;
-  animation-duration: 0.7s;
-  animation-name: fadeInUp;
-}
-.header-search-form {
-  position: relative;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-.header-search-form input {
-  padding: 12px 60px 12px 15px;
-  border: 1px solid #e5e5e5;
-  width: 100%;
-  border: none;
-  font-size: 14px;
-  border-radius: 5px;
-  overflow: hidden;
-  font-weight: 700;
-  color: $color__text;
-}
-.header-search-form input::placeholder {
-  color: $color__text;
-}
-.header-search-form .header-search-btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: none;
-  height: 100%;
-  padding: 0 20px;
-  background-color: $bg--base;
-  border-radius: 0 5px 5px 0;
-  color: $color__heading;
-}
+
 .page-wrapper-two{
   .navbar-collapse .main-menu li.menu_has_children{
     &.show{
@@ -382,7 +297,7 @@ section{
       &:hover{
         background-color: $bg--base;
           a{
-              color: $color__heading;
+              color: $white;
           }
       }
       a {
@@ -494,16 +409,16 @@ section{
     margin-top: 0;
   }
   .navbar-collapse .main-menu li.menu_has_children:hover a{
-    color: $color__heading;
+    color: $my--orange !important;
     @media only screen and (max-width: 991px) {
-      color: $white;
+      color: $my--orange !important;
     }
   }
   .navbar-collapse .main-menu li .sub-menu li a{
-    color: $white !important;
+    color: $my--orange !important;
   }
   .navbar-collapse .main-menu li .sub-menu li:hover a{
-    color: $color__heading !important;
+    color: $my--orange !important;
   }
   .navbar-collapse .main-menu li.menu_has_children.show .sub-menu{
     right: auto;

@@ -750,7 +750,7 @@
                 &::before{
                     position: absolute;
                     content: '\f00c';
-                    font-family: 'Font Awesome 5 Free';
+                    font-family: 'Font Awesome 6 Free';
                     font-weight: 900;
                     top: 0;
                     left: 0;
@@ -821,7 +821,7 @@
                 background-color: rgba($bg--base, 0.2);
                 border-radius: 50%;
                 text-align: center;
-                font-family: "Font Awesome 5 Free";
+                font-family: "Font Awesome 6 Free";
                 font-weight: 900;
             }
         }
@@ -1395,6 +1395,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
         font-weight: 700;
         font-size: 22px;
         margin-bottom: 4px;
+        color: $white;
         a{
             transition: all 0.5s;
             &:hover{
@@ -1403,7 +1404,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
         }
     }
     .sub-title{
-        color: #979797;
+        color: $white;
         font-size: 14px;
     }
 }
@@ -1416,7 +1417,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
     margin-top: 15px;
     padding-bottom: 10px;
     span{
-        color: #202C39;
+        color: $white;
         font-weight: 600;
         font-size: 14px;
     }
@@ -1424,7 +1425,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
 .charter-btn{
     margin-top: 20px;
     a{
-        color: $color__heading;
+        color: $my--orange;
         font-weight: 800;
         transition: all 0.5s;
         i{
@@ -1628,7 +1629,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
 .package-slider{
     overflow: hidden;
     .slider-next,.slider-prev{
-        left: 50%;
+        left: 47%;
         transform: translateX(-50%);
         margin-top: 40px;
     }
@@ -1858,7 +1859,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
                             top: 0;
                             left: 0;
                             content: '\f00c';
-                            font-family: "Font Awesome 5 Free";
+                            font-family: "Font Awesome 6 Free";
                             font-weight: 900;
                         }
                     }
@@ -3354,7 +3355,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
         &::after{
             content: '\f078';
             font-weight: 900;
-            font-family: 'Font Awesome 5 Free';
+            font-family: 'Font Awesome 6 Free';
             font-size: 16px;
             color: rgba($color__text, 0.7);
             right: 32px;
