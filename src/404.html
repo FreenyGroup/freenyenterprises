@@ -1,0 +1,83 @@
+@@include("partials/main.html")
+<head>
+  @@include("partials/title-meta.html", {"title": "About"})
+  @@include("partials/head-css.html")
+</head>
+@@include("partials/body.html")
+<div class="page-wrapper">
+  <header class="header-section header-section-one header--style">
+    <div class="header">
+        <div class="header-bottom-area">
+            <div class="container-fluid">
+                <div class="header-menu-content">
+                    <nav class="navbar navbar-expand-lg p-0">
+                        <a class="site-logo site-title" href="index.html"><img src="assets/images/logo.png"
+                                alt="site-logo"></a>
+                        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="fas fa-bars"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav main-menu ml-auto">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li class="menu_has_children"><a href="#0">Services</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="services.html">All Services</a></li>
+                                        <li><a href="charter.html">Private Jet Charter</a></li>
+                                        <li><a href="rentals.html">Vehicle Rentals</a></li>
+                                        <li><a href="shuttle.html">Shuttle Service</a></li>
+                                        <li><a href="travel.html">Travel Consultant</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="faq.html">Faq</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                            <div class="header-right">
+                                <div class="header-action-area">
+                                    <a href="contact.html" class="action-btn two"><i
+                                            class="icon-btn-icon"></i></a>
+                                    <div class="header-action">
+                                        <a href="contact.html" class="btn--base"><i
+                                                class="icon-btn-icon"></i> Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+  </header> 
+  @@include("partials/permanents.html")
+  <div class="four-not-four-section bg--gray ptb-120">
+    <div class="four-not-four-element-one">
+        <img src="assets/images/element/element-16.png" alt="element">
+    </div>
+    <div class="four-not-four-element-two">
+        <img src="assets/images/element/element-17.png" alt="element">
+    </div>
+    <div class="four-not-four-item text-center" data-aos="fade-up" data-aos-duration="1200">
+        <div class="four-not-four-thumb">
+            <img src="assets/images/404.png" alt="404">
+            <div class="four-not-four-element-three">
+                <img src="assets/images/element/element-16.png" alt="element">
+            </div>
+            <div class="four-not-four-element-four">
+                <img src="assets/images/element/element-17.png" alt="element">
+            </div>
+        </div>
+        <div class="four-not-four-content">
+            <h2 class="title">Oops! Look like you’re lost</h2>
+            <p> Page does not exist or some other error occured. Go to our <span><a href="index.html">Home
+                        page</a></span> </p>
+        </div>
+    </div>
+  </div>
+  @@include("partials/footer.html")
+</div>
+@@include("partials/vendor-scripts.html")
+</body>
+</html>

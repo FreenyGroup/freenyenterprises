@@ -1,0 +1,145 @@
+@@include("partials/main.html")
+<head>
+  @@include("partials/title-meta.html", {"title": "About"})
+  @@include("partials/head-css.html")
+</head>
+@@include("partials/body.html")
+<div class="page-wrapper">
+  @@include("partials/topbar.html")
+  @@include("partials/page-title.html",{"pagetitle":"Company","title":"About Us"})
+  @@include("partials/permanents.html")
+  <section class="contact-section ptb-120">
+    <div class="container">
+        <div class="row justify-content-center mb-30-none">
+            <div class="col-xl-6 col-lg-6 mb-30">
+                <div class="map-area">
+                    
+                    <iframe
+                    src="https://maps.google.com/maps?q=%20604%20Rhode%20Island%20Ave,%20NE&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 mb-30">
+                <div class="contact-widget">
+                    <div class="contact-form-header">
+                        <span class="sub-title">Freeny Enterprises</span>
+                        <h2 class="title">Contact Us?</h2>
+                        <p>Freeny Enterprises is the only way to fully 
+                            travel on your terms. Whether it’s accessing 
+                            a remote destination or taking back control of 
+                            productivity and flight scheduling. Let us know how we can help!</p>
+                    </div>
+                    <ul class="contact-item-list">
+                        <li>
+                            <a target="_blank" href="https://www.google.com/maps/place/604+Rhode+Island+Ave+NE,+Washington,+DC+20002/@38.9209367,-77.0005606,17z/data=!3m1!4b1!4m5!3m4!1s0x89b7b808725580ff:0x1ec8cd81e5d4bd98!8m2!3d38.9209325!4d-76.9983719">
+                                <div class="contact-item-icon">
+                                    <i class="icon-location-icon"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <h4 class="title">Our Location</h4>
+                                    <p>604 Rhode Island Ave NE, Washington, DC 20002</p>
+                                    <p class="text--base font-weight-bold">
+                                        Find Us On google Map 
+                                        <span class="ml-1">
+                                            <img 
+                                            src="assets/images/element/element-20.png"
+                                            alt="element">
+                                        </span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <h4 class="title">Our Phone</h4><p>571-405-9196</p>
+                                    <span class="sub-title">571-453-1850</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:contact@FreenyEnterpriseLLC.com">
+                                <div class="contact-item-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-item-content">
+                                    <h4 class="title">Our Email</h4>
+                                    <p>Contact@FreenyEnterpriseLLC.com</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+  <section class="contact-section bg--gray ptb-120">
+      <div class="contact-element">
+          <img src="assets/images/element/element-18.png" alt="element">
+      </div>
+      <div class="container">
+          <div class="row justify-content-center mb-30-none">
+              <div class="col-xl-5 col-lg-5 mb-30">
+                  <div class="contact-left-content" data-aos="fade-right" data-aos-duration="1200">
+                      <span class="sub-title">Talk to us</span>
+                      <h2 class="title">Any Question?
+                          Fell Free to
+                          Contact Us</h2>
+                      <p>With a vast array of popular services to choose from, whether travelling by private jet
+                          charter, scheduling a shuttle pickup, or renting a vehicle, we can help.</p>
+                  </div>
+              </div>
+              <div class="col-xl-7 col-lg-7 mb-30">
+                  <div class="contact-form-inner" data-aos="fade-left" data-aos-duration="1200">
+                      <div class="contact-form-area">
+                          <form class="contact-form">
+                              <div class="row justify-content-center mb-20-none">
+                                  <div class="col-xl-6 col-lg-6 form-group">
+                                      <label class="icon"><i class="icon-name_icone"></i></label>
+                                      <input type="text" class="form--control" name="name" placeholder="Name"
+                                          required>
+                                  </div>
+                                  <div class="col-xl-6 col-lg-6 form-group">
+                                      <label class="icon"><i class="las la-envelope"></i></label>
+                                      <input type="email" class="form--control" name="email" placeholder="Email"
+                                          required>
+                                  </div>
+                                  <div class="col-xl-6 col-lg-6 form-group">
+                                      <label class="icon"><i class="icon-call_icone"></i></label>
+                                      <input type="tel" class="form--control" name="phone" placeholder="Phone"
+                                          required>
+                                  </div>
+                                  <div class="col-xl-6 col-lg-6 form-group">
+                                      <div class="contact-select">
+                                          <select class="form--control">
+                                              <option value="Shuttle Service">Shuttle Service</option>
+                                              <option value="Jet Charter Service">Jet Charter Service</option>
+                                              <option value="Car Rental Service">Car Rental Service</option>
+                                              <option value="Travel Planning Service">Travel Planning Service</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-12 form-group">
+                                      <label class="icon"><i class="icon-massage"></i></label>
+                                      <textarea class="form--control" placeholder="Message" required></textarea>
+                                  </div>
+                                  <div class="col-lg-12 form-group">
+                                      <button type="submit" class="btn--base mt-10">Submit Now <i
+                                              class="icon-Group-2361 ml-2"></i></button>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  @@include("partials/footer.html")
+</div>
+@@include("partials/vendor-scripts.html")
+</body>
+</html>
