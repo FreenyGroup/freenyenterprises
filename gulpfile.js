@@ -238,4 +238,4 @@ gulp.task('html', function() {
 });
 
 // gulp.task('default', gulp.series(gulp.parallel('fileinclude', 'scss'), gulp.parallel('browsersync', 'watch'))); 'optimizeimg', 'webpImage'
-gulp.task('default', gulp.series(gulp.parallel('optimizeimg', 'webpImage', 'clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'js', 'jsPages', 'html'), gulp.parallel('browsersync', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('optimizeimg', 'webpImage', 'clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'js', 'jsPages', 'html')));
