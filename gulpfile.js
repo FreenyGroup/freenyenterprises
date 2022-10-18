@@ -15,6 +15,9 @@ const autoprefixer = require("gulp-autoprefixer");
 const sourcemaps = require("gulp-sourcemaps");    
 const cleanCSS = require('gulp-clean-css');
 const rtlcss = require('gulp-rtlcss');
+const webp = require('gulp-webp');
+const imagemin = require('gulp-imagemin');
+const purgecss = require('gulp-purgecss')
 
 const paths = {
   base:   {
@@ -38,6 +41,10 @@ const paths = {
     },
     css:    {
       dir:    './dist/assets/css',
+    },
+    img:    {
+      dir:    './src/assets/images',
+      files:  './src/assets/images/webp',
     },
     js:    {
       dir:    './dist/assets/js',
@@ -79,6 +86,23 @@ const paths = {
   }
 };
 
+gulp.task('optimizeimg', () => {
+  return gulp
+      .src(['./src/assets/images/*.{jpg,png}','./src/assets/images/**/*.{jpg,png}'])
+      .pipe(imagemin([
+        imagemin.mozjpeg({ quality: 80, progressive: true }),
+        imagemin.optipng({ optimizationLevel: 2 }),
+      ]))
+      .pipe(gulp.dest('./dist/assets/images'));
+});
+
+gulp.task('webpImage', () => {
+  return gulp
+      .src(['./src/assets/images/*.{jpg,png}','./src/assets/images/**/*.{jpg,png}'])
+      .pipe(webp())
+      .pipe(gulp.dest('./dist/assets/images'));
+});
+
 gulp.task('browsersync', function(callback) {
   browsersync.init({
     server: {
@@ -115,8 +139,8 @@ gulp.task('jsPages', function() {
 });
 
 gulp.task('scss', function () {
-  // generate ltr  
-  return gulp
+
+    return gulp
     .src(paths.src.scss.main)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -133,7 +157,17 @@ gulp.task('scss', function () {
     )
     .pipe(sourcemaps.write("./")) 
     .pipe(gulp.dest(paths.dist.css.dir));
+
 });
+
+gulp.task('purgecss', function(callback) {
+  return gulp.src('./dist/assets/css/*.css')
+      .pipe(purgecss({
+          content: ['./dist/**/*.html']
+      }))
+      .pipe(gulp.dest('./dist/assets/css/'))
+})
+
 
 gulp.task('fileinclude', function(callback) {
   return gulp
@@ -203,5 +237,5 @@ gulp.task('html', function() {
     .pipe(gulp.dest(paths.dist.base.dir));
 });
 
-// gulp.task('default', gulp.series(gulp.parallel('fileinclude', 'scss'), gulp.parallel('browsersync', 'watch')));
-gulp.task('default', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'js', 'jsPages', 'html')));
+// gulp.task('default', gulp.series(gulp.parallel('fileinclude', 'scss'), gulp.parallel('browsersync', 'watch'))); 'optimizeimg', 'webpImage'
+gulp.task('default', gulp.series(gulp.parallel('optimizeimg', 'webpImage', 'clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'js', 'jsPages', 'html'), gulp.parallel('browsersync', 'watch')));
