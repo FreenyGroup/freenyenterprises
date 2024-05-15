@@ -105,9 +105,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(360deg, rgba(25,35,45,.82) 3%, transparent 100%);
+        background-image: linear-gradient(360deg, rgba(25,35,45,.85) 75%, transparent 100%);
         @media only screen and (max-width: 575px) {
-            background-image: linear-gradient(360deg, rgba(25,35,45,.82) 100%, transparent 100%);
+            background-image: linear-gradient(360deg, rgba(25,35,45,.85) 75%, transparent 100%);
         }
     }
     .overview-thumb-content{
@@ -350,7 +350,7 @@
     position: relative;
     display: inline-block;
   }
-  
+
   .waves {
     position: absolute;
     width: 180px;
@@ -366,22 +366,22 @@
     -webkit-animation: waves 3s ease-in-out infinite;
     animation: waves 3s ease-in-out infinite;
   }
-  
+
   .wave-1 {
     -webkit-animation-delay: 0s;
     animation-delay: 0s;
   }
-  
+
   .wave-2 {
     -webkit-animation-delay: 1s;
     animation-delay: 1s;
   }
-  
+
   .wave-3 {
     -webkit-animation-delay: 2s;
     animation-delay: 2s;
   }
-  
+
   @keyframes waves {
     0% {
       -webkit-transform: scale(0.2, 0.2);
@@ -389,12 +389,12 @@
       opacity: 0;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     }
-  
+
     50% {
       opacity: 1;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
     }
-  
+
     100% {
       -webkit-transform: scale(0.9, 0.9);
       transform: scale(0.9, 0.9);
@@ -1589,15 +1589,23 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
     overflow: hidden;
     .package-element-one{
         position: absolute;
-        bottom: 0;
+        //bottom: 0;
         left: -10%;
         @media only screen and (max-width: 991px) {
             display: none;
         }
     }
+      .package-element-three {
+          position: absolute;
+          bottom: 0;
+          left: -10%;
+          @media only screen and (max-width: 991px) {
+            display: none;
+          }
+        }
     .package-element-two{
         position: absolute;
-        bottom: 0;
+        //bottom: 0;
         right: -10%;
         @media only screen and (max-width: 991px) {
             display: none;
@@ -1626,7 +1634,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
         right: 0;
     }
 }
-.package-slider{
+.package-slider,.package-slider-2,.package-slider-3{
     overflow: hidden;
     .slider-next,.slider-prev{
         left: 47%;
@@ -1758,7 +1766,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
     .package-widget-area{
         margin-top: 60px;
         color: $text--base;
-        
+
         .package-widget-item{
             background-color: $white;
             box-shadow: 0 5px 25px rgba(0,0,0,.1);
@@ -1770,7 +1778,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
             position: relative;
             z-index: 2;
             &::before{
-                
+
                 position: absolute;
                 content: '';
                 top: 50%;
@@ -1807,7 +1815,7 @@ div[class*="col"]:nth-of-type(4n + 4) .statistics-item::after{
                 .title{
                     font-family: $font_body;
                     font-weight: 800;
-                    
+
                 }
                 .sub-title{
                     font-weight: 600;

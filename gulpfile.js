@@ -11,127 +11,151 @@ const uglify = require('gulp-uglify');
 const useref = require('gulp-useref-plus');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require("gulp-autoprefixer");
-const sourcemaps = require("gulp-sourcemaps");    
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
 const cleanCSS = require('gulp-clean-css');
 const rtlcss = require('gulp-rtlcss');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
-const purgecss = require('gulp-purgecss')
+const purgecss = require('gulp-purgecss');
 
 const paths = {
-  base:   {
-    base:         {
-      dir:    './'
+  base: {
+    base: {
+      dir: './',
     },
-    node:         {
-      dir:    './node_modules'
+    node: {
+      dir: './node_modules',
     },
-    packageLock:  {
-      files:  './package-lock.json'
-    }
-  },
-  dist:   {
-    base:   {
-      dir:    './dist',
-      files:  './dist/**/*'
-    },
-    libs:   {
-      dir:    './dist/assets/libs'
-    },
-    css:    {
-      dir:    './dist/assets/css',
-    },
-    img:    {
-      dir:    './src/assets/images',
-      files:  './src/assets/images/webp',
-    },
-    js:    {
-      dir:    './dist/assets/js',
-      files:  './dist/assets/js/pages',
+    packageLock: {
+      files: './package-lock.json',
     },
   },
-  src:    {
-    base:   {
-      dir:    './src',
-      files:  './src/**/*'
+  dist: {
+    base: {
+      dir: './dist',
+      files: './dist/**/*',
     },
-    css:    {
-      dir:    './src/assets/css',
-      files:  './src/assets/css/**/*'
+    libs: {
+      dir: './dist/assets/libs',
     },
-    html:   {
-      dir:    './src',
-      files:  './src/**/*.html',
+    css: {
+      dir: './dist/assets/css',
     },
-    img:    {
-      dir:    './src/assets/images',
-      files:  './src/assets/images/**/*',
+    img: {
+      dir: './src/assets/images',
+      files: './src/assets/images/webp',
     },
-    js:     {
-      dir:    './src/assets/js',
-      pages:  './src/assets/js/pages',
-      files:  './src/assets/js/pages/*.js',
-      main:   './src/assets/js/*.js',
+    js: {
+      dir: './dist/assets/js',
+      files: './dist/assets/js/pages',
     },
-    partials:   {
-      dir:    './src/partials',
-      files:  './src/partials/**/*'
+  },
+  src: {
+    base: {
+      dir: './src',
+      files: './src/**/*',
     },
-    scss:   {
-      dir:    './src/assets/scss',
-      files:  './src/assets/scss/**/*',
-      main:   './src/assets/scss/*.scss'
-    }
-  }
+    css: {
+      dir: './src/assets/css',
+      files: './src/assets/css/**/*',
+    },
+    html: {
+      dir: './src',
+      files: './src/**/*.html',
+    },
+    img: {
+      dir: './src/assets/images',
+      files: './src/assets/images/**/*',
+    },
+    js: {
+      dir: './src/assets/js',
+      pages: './src/assets/js/pages',
+      files: './src/assets/js/pages/*.js',
+      main: './src/assets/js/*.js',
+    },
+    partials: {
+      dir: './src/partials',
+      files: './src/partials/**/*',
+    },
+    scss: {
+      dir: './src/assets/scss',
+      files: './src/assets/scss/**/*',
+      main: './src/assets/scss/*.scss',
+    },
+  },
 };
 
 gulp.task('optimizeimg', () => {
   return gulp
-      .src(['./src/assets/images/*.{jpg,png}','./src/assets/images/**/*.{jpg,png}'])
-      .pipe(imagemin([
+    .src([
+      './src/assets/images/*.{jpg,png}',
+      './src/assets/images/**/*.{jpg,png}',
+    ])
+    .pipe(
+      imagemin([
         imagemin.mozjpeg({ quality: 80, progressive: true }),
         imagemin.optipng({ optimizationLevel: 2 }),
-      ]))
-      .pipe(gulp.dest('./dist/assets/images'));
+      ])
+    )
+    .pipe(gulp.dest('./dist/assets/images'));
 });
 
 gulp.task('webpImage', () => {
   return gulp
-      .src(['./src/assets/images/*.{jpg,png}','./src/assets/images/**/*.{jpg,png}'])
-      .pipe(webp())
-      .pipe(gulp.dest('./dist/assets/images'));
+    .src([
+      './src/assets/images/*.{jpg,png}',
+      './src/assets/images/**/*.{jpg,png}',
+    ])
+    .pipe(webp())
+    .pipe(gulp.dest('./dist/assets/images'));
 });
 
-gulp.task('browsersync', function(callback) {
+gulp.task('browsersync', function (callback) {
   browsersync.init({
     server: {
-      baseDir: [paths.dist.base.dir, paths.src.base.dir, paths.base.base.dir]
+      baseDir: [
+        paths.dist.base.dir,
+        paths.src.base.dir,
+        paths.base.base.dir,
+      ],
     },
   });
   callback();
 });
 
-gulp.task('browsersyncReload', function(callback) {
+gulp.task('browsersyncReload', function (callback) {
   browsersync.reload();
   callback();
 });
 
-gulp.task('watch', function() {
-  gulp.watch(paths.src.scss.files, gulp.series('scss', 'browsersyncReload'));
-  gulp.watch([paths.src.js.dir], gulp.series('js','browsersyncReload'));
-  gulp.watch([paths.src.js.pages], gulp.series('jsPages','browsersyncReload'));
-  gulp.watch([paths.src.html.files, paths.src.partials.files], gulp.series('fileinclude', 'browsersyncReload'));
+gulp.task('watch', function () {
+  gulp.watch(
+    paths.src.scss.files,
+    gulp.series('scss', 'browsersyncReload')
+  );
+  gulp.watch(
+    [paths.src.js.dir],
+    gulp.series('js', 'browsersyncReload')
+  );
+  gulp.watch(
+    [paths.src.js.pages],
+    gulp.series('jsPages', 'browsersyncReload')
+  );
+  gulp.watch(
+    [paths.src.html.files, paths.src.partials.files],
+    gulp.series('fileinclude', 'browsersyncReload')
+  );
 });
 
-gulp.task('js', function() {
+gulp.task('js', function () {
   return gulp
     .src(paths.src.js.main)
     .pipe(uglify())
     .pipe(gulp.dest(paths.dist.js.dir));
 });
 
-gulp.task('jsPages', function() {
+gulp.task('jsPages', function () {
   return gulp
     .src(paths.src.js.files)
     .pipe(uglify())
@@ -139,103 +163,135 @@ gulp.task('jsPages', function() {
 });
 
 gulp.task('scss', function () {
-
-    return gulp
+  return gulp
     .src(paths.src.scss.main)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(
-      autoprefixer()
-    )
+    .pipe(autoprefixer())
     .pipe(gulp.dest(paths.dist.css.dir))
     .pipe(cleanCSS())
     .pipe(
       rename({
-        // 
-        suffix: ".min"
+        //
+        suffix: '.min',
       })
     )
-    .pipe(sourcemaps.write("./")) 
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.dist.css.dir));
-
 });
 
-gulp.task('purgecss', function(callback) {
-  return gulp.src('./dist/assets/css/*.css')
-      .pipe(purgecss({
-          content: ['./dist/**/*.html']
-      }))
-      .pipe(gulp.dest('./dist/assets/css/'))
-})
+gulp.task('purgecss', function (callback) {
+  return gulp
+    .src('./dist/assets/css/*.css')
+    .pipe(
+      purgecss({
+        content: ['./dist/**/*.html'],
+      })
+    )
+    .pipe(gulp.dest('./dist/assets/css/'));
+});
 
-
-gulp.task('fileinclude', function(callback) {
+gulp.task('fileinclude', function (callback) {
   return gulp
     .src([
       paths.src.html.files,
       '!' + paths.dist.base.files,
-      '!' + paths.src.partials.files
+      '!' + paths.src.partials.files,
     ])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file',
-      indent: true,
-    }))
+    .pipe(
+      fileinclude({
+        prefix: '@@',
+        basepath: '@file',
+        indent: true,
+      })
+    )
     .pipe(cached())
     .pipe(gulp.dest(paths.dist.base.dir));
 });
 
-gulp.task('clean:packageLock', function(callback) {
+gulp.task('clean:packageLock', function (callback) {
   del.sync(paths.base.packageLock.files);
   callback();
 });
 
-gulp.task('clean:dist', function(callback) {
+gulp.task('clean:dist', function (callback) {
   del.sync(paths.dist.base.dir);
   callback();
 });
 
-gulp.task('copy:all', function() {
+gulp.task('copy:all', function () {
   return gulp
     .src([
       paths.src.base.files,
-      '!' + paths.src.partials.dir, '!' + paths.src.partials.files,
-      '!' + paths.src.scss.dir, '!' + paths.src.scss.files,
-      '!' + paths.src.js.dir, '!' + paths.src.js.files, '!' + paths.src.js.main, 
+      '!' + paths.src.partials.dir,
+      '!' + paths.src.partials.files,
+      '!' + paths.src.scss.dir,
+      '!' + paths.src.scss.files,
+      '!' + paths.src.js.dir,
+      '!' + paths.src.js.files,
+      '!' + paths.src.js.main,
       '!' + paths.src.html.files,
     ])
     .pipe(gulp.dest(paths.dist.base.dir));
 });
 
-gulp.task('copy:libs', function() {
+gulp.task('copy:libs', function () {
   return gulp
     .src(npmdist(), { base: paths.base.node.dir })
-    .pipe(rename(function(path) {
-        path.dirname = path.dirname.replace(/\/dist/, '').replace(/\\dist/, '');
-    }))
+    .pipe(
+      rename(function (path) {
+        path.dirname = path.dirname
+          .replace(/\/dist/, '')
+          .replace(/\\dist/, '');
+      })
+    )
     .pipe(gulp.dest(paths.dist.libs.dir));
 });
 
-gulp.task('html', function() {
+gulp.task('html', function () {
   return gulp
     .src([
       paths.src.html.files,
       '!' + paths.dist.base.files,
-      '!' + paths.src.partials.files
+      '!' + paths.src.partials.files,
     ])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file',
-      indent: true,
-    }))
-    .pipe(replace(/href="(.{0,10})node_modules/g, 'href="$1assets/libs'))
-    .pipe(replace(/src="(.{0,10})node_modules/g, 'src="$1assets/libs'))
+    .pipe(
+      fileinclude({
+        prefix: '@@',
+        basepath: '@file',
+        indent: true,
+      })
+    )
+    .pipe(
+      replace(/href="(.{0,10})node_modules/g, 'href="$1assets/libs')
+    )
+    .pipe(
+      replace(/src="(.{0,10})node_modules/g, 'src="$1assets/libs')
+    )
     .pipe(useref())
     .pipe(cached())
     .pipe(gulpif('*.js', uglify()))
-    .pipe(gulpif('*.css', cssnano({svgo: false})))
+    .pipe(gulpif('*.css', cssnano({ svgo: false })))
     .pipe(gulp.dest(paths.dist.base.dir));
 });
 
 // gulp.task('default', gulp.series(gulp.parallel('fileinclude', 'scss'), gulp.parallel('browsersync', 'watch'))); 'optimizeimg', 'webpImage'
-gulp.task('default', gulp.series(gulp.parallel('optimizeimg', 'webpImage', 'clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'scss', 'js', 'jsPages', 'html')));
+gulp.task(
+  'default',
+  gulp.series(
+    gulp.parallel(
+      'optimizeimg',
+      'webpImage',
+      'clean:packageLock',
+      'clean:dist',
+      'copy:all',
+      'copy:libs',
+      'fileinclude',
+      'scss',
+      'js',
+      'jsPages',
+      'html'
+    )
+    //gulp.parallel('browsersync', 'watch')
+  )
+);
