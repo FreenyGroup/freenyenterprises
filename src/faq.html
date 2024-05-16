@@ -1,13 +1,40 @@
 @@include("partials/main.html")
 <head>
-  @@include("partials/title-meta.html", {"title": "FAQ"})
+  @@include("partials/title-meta.html", {"title": "Rental Agreement"})
   @@include("partials/head-css.html")
 </head>
+<style>
+  .pdf {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  }
+
+  .pdf,
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h3 {
+    text-align: center;
+  }
+
+  h1 {
+    color: green;
+  }
+</style>
 @@include("partials/body.html")
 <div class="page-wrapper">
   @@include("partials/topbar.html")
-  @@include("partials/page-title.html",{"title":"FAQ"})
+  @@include("partials/page-title.html",{"title":"Rental Agreement"})
   @@include("partials/permanents.html")
+  <object class="pdf" data="assets/pdf/agreement-pdf.pdf" width="800"
+    height="500">
+  </object>
+  <!--
     <section class="faq-section ptb-120">
         <div class="container">
             <div class="row justify-content-center mb-30-none">
@@ -41,9 +68,9 @@
                                 <p>Generally, in aviation, you’ll come across two, perhaps three, descriptions for flights. You’ll hear some flights referred to as ‘charter’ flights and others referred to as either ‘commercial’, ‘regular’ or ‘scheduled’ flights.
 
                                     On the face of it, it is actually pretty simple.
-                                    
+
                                     If we think in simple terms, ‘scheduled’ or ‘commercial’ flights can be equated to buses or trains. They run at a regular and set time over a given period, according to a schedule (hence the name). The time between each service doesn’t matter. As long as there is a recurring pattern on a given date and time, they are generally considered a scheduled service.
-                                    
+
                                     Travelers embarking on a scheduled service have limited flexibility. They will generally have to pick the ‘best fit’ regarding both the time they want to travel and the destination.</p>
                             </div>
                         </div>
@@ -146,6 +173,7 @@
         </div>
     </div>
     </section>
+  -->
   @@include("partials/footer.html")
 </div>
 @@include("partials/vendor-scripts.html")

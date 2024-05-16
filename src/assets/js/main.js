@@ -251,7 +251,7 @@
     },
     autoplay: {
       speeds: 2000,
-      delay: 4000,
+      delay: 6000,
     },
     speed: 1000,
     breakpoints: {
@@ -277,7 +277,7 @@
     },
     autoplay: {
       speeds: 2000,
-      delay: 4000,
+      delay: 8000,
     },
     speed: 1000,
     breakpoints: {
