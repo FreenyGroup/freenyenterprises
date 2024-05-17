@@ -3,6 +3,7 @@
   @@include("partials/title-meta.html", {"title": "Rental Agreement"})
   @@include("partials/head-css.html")
 </head>
+<!--
 <style>
   .pdf {
         width: 100%;
@@ -16,6 +17,7 @@
         padding: 0;
     }
 </style>
+-->
 @@include("partials/body.html")
 <div class="page-wrapper">
   @@include("partials/topbar.html")
@@ -24,9 +26,11 @@
   <!--<object class="pdf" data="assets/pdf/agreement-pdf.pdf" width="800"
     height="500">
   </object>-->
-  <iframe class="pdf" src="assets/pdf/agreement-pdf.pdf" width="800"
-    height="500">
-  </iframe>
+  <div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+    <iframe width="100%" height="100%" src="assets/pdf/agreement-pdf.pdf"
+      frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0">
+    </iframe>
+  </div>
   <!--
     <section class="faq-section ptb-120">
         <div class="container">
