@@ -1,0 +1,35 @@
+<div class="package-slider swiper">
+  <div class="swiper-wrapper">
+
+    {% for car in cars %}
+      <div class="swiper-slide">
+        <div class="charter-item">
+          <div class="charter-thumb">
+            <img src="{{ car.image }}" alt="{{ car.title }}">
+          </div>
+
+          <div class="charter-content">
+            <h3 class="title"><a href="cars.html">{{ car.title }}</a></h3>
+            <span class="sub-title">{{ car.transmission }}</span>
+
+            <div class="charter-meta">
+              <span class="seat">{{ car.seats }}</span>
+              <span class="price">{{ car.price }}</span>
+            </div>
+            <div class="charter-btn">
+              <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+  </div>
+
+  <div class="slider-prev">
+    <i class="fas fa-chevron-left"></i>
+  </div>
+  <div class="slider-next">
+    <i class="fas fa-chevron-right"></i>
+  </div>
+</div>

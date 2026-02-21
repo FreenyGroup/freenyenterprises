@@ -1,13 +1,13 @@
-@@include("partials/main.html")
-<head>
-  @@include("partials/title-meta.html", {"title": "Booking"})
-  @@include("partials/head-css.html")
-</head>
-@@include("partials/body.html")
+{% extends "layouts/base.njk" %}
+
+{% block title %}Booking{% endblock %}
+
+{% block content %}
 <div class="page-wrapper">
-  @@include("partials/topbar.html")
-  @@include("partials/page-title.html",{"title":"Rental Booking"})
-  @@include("partials/permanents.html")
+{% include "partials/topbar.njk" %}
+{% set title = "Booking" %}
+{% include "partials/page-title.njk" %}
+{% include "partials/permanents.njk" %}
   <div class="hq-rental-software-integration"
   data-integrator_link="https://freeny-enterprise.freenyenterprises.com/public/car-rental/integrations"
   data-brand="mn52oao8-56fn-ivqk-ldgz-mjvxjwwxfwvt"
@@ -16,9 +16,9 @@
   data-rate_type_uuid=""
   data-referral="">
   </div>
-  @@include("partials/footer.html")
+    {% include "partials/footer.njk" %}
 </div>
 <script src="https://freeny-enterprise.freenyenterprises.com/public/car-rental/integrations/assets/integrator"></script>
-@@include("partials/vendor-scripts.html")
-</body>
-</html>
+
+{% endblock %}
+

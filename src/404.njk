@@ -1,9 +1,9 @@
-@@include("partials/main.html")
-<head>
-  @@include("partials/title-meta.html", {"title": "About"})
-  @@include("partials/head-css.html")
-</head>
-@@include("partials/body.html")
+{% extends "layouts/base.njk" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
 <div class="page-wrapper">
   <header class="header-section header-section-one header--style">
     <div class="header">
@@ -50,8 +50,8 @@
             </div>
         </div>
     </div>
-  </header> 
-  @@include("partials/permanents.html")
+  </header>
+  {% include "partials/permanents.njk" %}
   <div class="four-not-four-section bg--gray ptb-120">
     <div class="four-not-four-element-one">
         <img src="assets/images/element/element-16.webp" alt="element">
@@ -76,8 +76,7 @@
         </div>
     </div>
   </div>
-  @@include("partials/footer.html")
+   {% include "partials/footer.njk" %}
 </div>
-@@include("partials/vendor-scripts.html")
-</body>
-</html>
+
+{% endblock %}

@@ -1,13 +1,14 @@
-@@include("partials/main.html")
-<head>
-  @@include("partials/title-meta.html", {"title": "Contact Us"})
-  @@include("partials/head-css.html")
-</head>
-@@include("partials/body.html")
+{% extends "layouts/base.njk" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
 <div class="page-wrapper">
-  @@include("partials/topbar.html")
-  @@include("partials/page-title.html",{"title":"Contact Us"})
-  @@include("partials/permanents.html")
+  {% include "partials/topbar.njk" %}
+{% set title = "Contact Us" %}
+{% include "partials/page-title.njk" %}
+{% include "partials/permanents.njk" %}
   <section class="contact-section ptb-120">
     <div class="container">
         <div class="row justify-content-center mb-30-none">
@@ -70,8 +71,8 @@
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div class="contact-item-content">
-                                    <h4 class="title">Our Phone</h4><p>571-405-9196</p>
-                                    <span class="sub-title">571-733-3339</span>
+                                    <h4 class="title">Our Phone</h4>
+                                    <span class="sub-title">703-599-1585</span>
                                 </div>
                             </a>
                         </li>
@@ -154,8 +155,9 @@
           </div>
       </div>
   </section>
-  @@include("partials/footer.html")
+    {% include "partials/footer.njk" %}
 </div>
-@@include("partials/vendor-scripts.html")
-</body>
-</html>
+
+{% endblock %}
+
+

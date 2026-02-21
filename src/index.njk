@@ -1,0 +1,297 @@
+{% extends "layouts/base.njk" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+
+<div class="page-wrapper dark">
+    {% include "partials/topbar.njk" %}
+    <section class="banner-section">
+        <div class="banner-element" data-aos="fade-left" data-aos-duration="1200">
+            <img src="assets/images/element/element-21.webp" alt="element">
+        </div>
+        <div class="banner-element-two">
+            <img src="assets/images/element/element-3.webp" alt="element">
+        </div>
+        <div class="banner-element-three">
+            <img src="assets/images/element/element-4.webp" alt="element">
+        </div>
+        <div class="banner-element-four">
+            <img src="assets/images/element/element-5.webp" alt="element">
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center mb-30-none">
+                <div class="col-xxl-5 col-xl-6 col-lg-12 mb-30">
+                    <div class="banner-content" data-aos="fade-right" data-aos-duration="1800">
+                        <span class="sub-title"><span>Freeny</span>Enterprise LLC</span>
+                        <h1 class="title">Unlock Your Journey with Freeny Enterprise LLC</h1>
+                        <div class="banner-btn">
+                            <a href="booking.html" class="btn--base">
+                                <i class="fas fa-chevron-right mr-2"></i>
+                                Start Booking
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-7 col-xl-6 col-lg-6 mb-0">
+                    <div class="banner-thumb">
+                        <img src="assets/images/element/element-2.png" alt="element">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "partials/permanents.njk" %}
+
+
+
+
+
+    <section class="package-section section--bg ptb-120">
+      <div class="package-element-one">
+        <img src="assets/images/element/element-24.webp" alt="element">
+      </div>
+      <div class="package-element-two">
+        <img src="assets/images/element/element-1.webp" alt="element">
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <span class="sub-title text-white"><span>Freeny Enterprise LLC</span> Vehicle Rentals</span>
+              <h2 class="section-title">Uber Black Vehicles</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            {% set cars = [] %}
+            {% for car in vehicles %}
+              {% if car.category == "uber" %}
+                {% set cars = cars.concat([car]) %}
+              {% endif %}
+            {% endfor %}
+            {% include "partials/cards-grid.njk" %}
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <h2 class="section-title mt-4">SUV/Vans</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            {% set cars = [] %}
+            {% for car in vehicles %}
+              {% if car.category == "suv" %}
+                {% set cars = cars.concat([car]) %}
+              {% endif %}
+            {% endfor %}
+            {% include "partials/cards-grid.njk" %}
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <h2 class="section-title mt-4">Economy/Sedans</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            {% set cars = [] %}
+            {% for car in vehicles %}
+              {% if car.category == "sedan" %}
+                {% set cars = cars.concat([car]) %}
+              {% endif %}
+            {% endfor %}
+            {% include "partials/cards-grid.njk" %}
+          </div>
+        </div>
+      </div>
+      <div class="package-element-three">
+        <img src="assets/images/element/element-24.webp" alt="element">
+      </div>
+    </section>
+
+
+
+
+
+
+    <div class="overview-section pb-120">
+        <div class="container-fluid">
+            <div class="overview-area">
+                <div class="overview-element" data-aos="fade-up" data-aos-duration="1200">
+                    <img src="assets/images/element/element-6.webp" alt="element">
+                </div>
+                <div class="overview-tab">
+                    <nav>
+                        <div class="overview-tab-thumb" data-aos="fade-left" data-aos-duration="1200">
+                            <img src="assets/images/overview/overview-2.webp" alt="overview">
+                            <div class="nav-tab-area">
+                                <div class="nav-tab-header">
+                                    <span class="sub-title"><span>Start</span> Your Journey With Freeny Enterprise LLC</span>
+                                    <h2 class="title">Find the Best Car For You</h2>
+                                </div>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active" id="private-jet-tab" data-toggle="tab"
+                                        data-target="#private-jet" type="button" role="tab"
+                                        aria-controls="private-jet" aria-selected="true"><span>01</span> Economy Car Rentals</button>
+                                    <button class="nav-link" id="business-jet-tab" data-toggle="tab"
+                                        data-target="#business-jet" type="button" role="tab"
+                                        aria-controls="business-jet" aria-selected="false"><span>02</span> SUV Car Rentals</button>
+                                    <button class="nav-link" id="private-helicopter-tab" data-toggle="tab"
+                                        data-target="#private-helicopter" type="button" role="tab"
+                                        aria-controls="private-helicopter" aria-selected="false"><span>03</span>
+                                        Luxury Car Rentals</button>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent" data-aos="fade-right" data-aos-duration="1200">
+                        <div class="tab-pane fade show active" id="private-jet" role="tabpanel"
+                            aria-labelledby="private-jet-tab">
+                            <div class="overview-item">
+                                <div class="overview-thumb">
+                                    <img src="assets/images/overview/hyundai-accent.png" alt="overview">
+                                    <div class="overview-thumb-content">
+                                        <h3 class="title"><a href="charter.html">Economy Car Rentals</a>
+                                        </h3>
+                                        <p>Rent an economy car for driving in crowded, downtown areas with busy traffic and tight parking spaces. Economy car
+                                        rentals typically offer the best fuel efficiency. Reserve now and get low rates on an economy car rental from Freeny Enterprise LLC.</p>
+                                        <div class="overview-btn">
+                                            <a href="booking.html" class="custom-btn"><i
+                                                    class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="business-jet" role="tabpanel"
+                            aria-labelledby="business-jet-tab">
+                            <div class="overview-item">
+                                <div class="overview-thumb">
+                                    <img src="assets/images/overview/toyota-highlander.png" alt="overview">
+                                    <div class="overview-thumb-content">
+                                        <h3 class="title"><a href="cars.html">SUV Car Rentals</a>
+                                        </h3>
+                                        <p>A standard SUV rental provides plenty of room for passengers and luggage. SUVs are great for business, leisure, or
+                                        weekend road trips. Reserve now and get low rates on a standard SUV from Freeny Enterprise LLC.</p>
+                                        <div class="overview-btn">
+                                            <a href="booking.html" class="custom-btn"><i
+                                                    class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="private-helicopter" role="tabpanel"
+                            aria-labelledby="private-helicopter-tab">
+                            <div class="overview-item">
+                                <div class="overview-thumb">
+                                    <img src="assets/images/overview/mercedes-c300.png" alt="overview">
+                                    <div class="overview-thumb-content">
+                                        <h3 class="title"><a href="cars.html">Luxury Car Rentals</a></h3>
+                                        <p>Standard elite vehicles offer sporty driving characteristics and high-end interiors, perfect for car enthusiasts. Rent
+                                        cars like a Mercedes C300, Mercedes S580, or similar.</p>
+                                        <div class="overview-btn">
+                                            <a href="booking.html" class="custom-btn"><i
+                                                    class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="about-section bg-overlay-base ptb-120 bg_img" data-background="assets/images/bg/bg-8.webp">
+        <div class="container">
+            <div class="row justify-content-center mb-30-none">
+                <div class="col-xl-7 col-lg-7 mb-30">
+                    <div class="about-content">
+                        <span class="sub-title"><span>About</span> Freeny Enterprise LLC</span>
+                        <h2 class="title">Lets' Go</h2>
+                        <p>Discover the freedom to roam far and wide with our dependable vehicles and personalized assistance. Your adventure
+                        begins the moment you step into one of our cars.</p>
+                        <div class="about-book-area">
+                            <div class="about-book-element">
+                                <img src="assets/images/element/element-7.webp" alt="element">
+                            </div>
+                            <div class="about-book-left">
+                                <h3 class="call-title">Book any ride, right now</h3>
+                                <div class="row call">
+                                    <span class="col"><a href="tel:7035991585">703-599-1585</a></span>
+                                </div>
+                            </div>
+                            <div class="about-book-right">
+                                <a href="contact.html" class="btn--base"><i class="fa-solid fa-van-shuttle"></i> Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="feature-section page-wrapper-two ptb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-12 text-center">
+                    <div class="section-header white">
+                        <span class="sub-title text-white">Why Choose <span>Freeny Enterprise LLC</span> ?</span>
+                        <h2 class="section-title">We have the tools, the team, and the experience.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="feature-area">
+                <div class="row justify-content-center m-0">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 p-0">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fa fa-car-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="title">Reliable Fleet</h3>
+                                <p>Our clients enjoy access to a meticulously maintained fleet of vehicles, ensuring a smooth and worry-free journey every
+                                time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 p-0">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fa fa-users-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="title">Personalized Service</h3>
+                                <p>We prioritize customer satisfaction, offering tailored assistance and flexible rental options to meet individual needs
+                                and preferences.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 p-0">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fa fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h3 class="title">Convenience and Efficiency</h3>
+                                <p>With seamless booking processes and convenient pickup and drop-off locations, our clients can focus on their adventures
+                                rather than logistics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+      {% include "partials/footer.njk" %}
+</div>
+
+{% endblock %}

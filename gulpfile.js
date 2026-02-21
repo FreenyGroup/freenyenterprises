@@ -2,7 +2,6 @@ const browsersync = require('browser-sync').create();
 const cached = require('gulp-cached');
 const cssnano = require('gulp-cssnano');
 const del = require('del');
-const fileinclude = require('gulp-file-include');
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const npmdist = require('gulp-npm-dist');
@@ -18,6 +17,9 @@ const rtlcss = require('gulp-rtlcss');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const purgecss = require('gulp-purgecss');
+const nunjucksRender = require('gulp-nunjucks-render');
+const data = require('gulp-data');
+const fs = require('fs');
 
 const paths = {
   base: {
@@ -62,7 +64,7 @@ const paths = {
     },
     html: {
       dir: './src',
-      files: './src/**/*.html',
+      files: './src/**/*.njk',
     },
     img: {
       dir: './src/assets/images',
@@ -96,7 +98,7 @@ gulp.task('optimizeimg', () => {
       imagemin([
         imagemin.mozjpeg({ quality: 80, progressive: true }),
         imagemin.optipng({ optimizationLevel: 2 }),
-      ])
+      ]),
     )
     .pipe(gulp.dest('./dist/assets/images'));
 });
@@ -132,19 +134,23 @@ gulp.task('browsersyncReload', function (callback) {
 gulp.task('watch', function () {
   gulp.watch(
     paths.src.scss.files,
-    gulp.series('scss', 'browsersyncReload')
+    gulp.series('scss', 'browsersyncReload'),
   );
   gulp.watch(
     [paths.src.js.dir],
-    gulp.series('js', 'browsersyncReload')
+    gulp.series('js', 'browsersyncReload'),
   );
   gulp.watch(
     [paths.src.js.pages],
-    gulp.series('jsPages', 'browsersyncReload')
+    gulp.series('jsPages', 'browsersyncReload'),
   );
   gulp.watch(
-    [paths.src.html.files, paths.src.partials.files],
-    gulp.series('fileinclude', 'browsersyncReload')
+    [
+      paths.src.html.files,
+      paths.src.partials.files,
+      './src/data/**/*.json',
+    ],
+    gulp.series('nunjucks', 'browsersyncReload'),
   );
 });
 
@@ -174,7 +180,7 @@ gulp.task('scss', function () {
       rename({
         //
         suffix: '.min',
-      })
+      }),
     )
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.dist.css.dir));
@@ -186,27 +192,20 @@ gulp.task('purgecss', function (callback) {
     .pipe(
       purgecss({
         content: ['./dist/**/*.html'],
-      })
+        safelist: [
+          'active',
+          'show',
+          'collapse',
+          'fade',
+          'swiper-slide',
+          'swiper-wrapper',
+          /^swiper-/,
+          /^modal-/,
+          /^dropdown-/,
+        ],
+      }),
     )
     .pipe(gulp.dest('./dist/assets/css/'));
-});
-
-gulp.task('fileinclude', function (callback) {
-  return gulp
-    .src([
-      paths.src.html.files,
-      '!' + paths.dist.base.files,
-      '!' + paths.src.partials.files,
-    ])
-    .pipe(
-      fileinclude({
-        prefix: '@@',
-        basepath: '@file',
-        indent: true,
-      })
-    )
-    .pipe(cached())
-    .pipe(gulp.dest(paths.dist.base.dir));
 });
 
 gulp.task('clean:packageLock', function (callback) {
@@ -243,33 +242,35 @@ gulp.task('copy:libs', function () {
         path.dirname = path.dirname
           .replace(/\/dist/, '')
           .replace(/\\dist/, '');
-      })
+      }),
     )
     .pipe(gulp.dest(paths.dist.libs.dir));
 });
 
-gulp.task('html', function () {
+gulp.task('nunjucks', function () {
   return gulp
-    .src([
-      paths.src.html.files,
-      '!' + paths.dist.base.files,
-      '!' + paths.src.partials.files,
-    ])
+    .src([paths.src.html.files, '!' + paths.src.partials.files])
     .pipe(
-      fileinclude({
-        prefix: '@@',
-        basepath: '@file',
-        indent: true,
-      })
+      data(function () {
+        const json = JSON.parse(
+          fs.readFileSync('./src/data/vehicles.json'),
+        );
+
+        return json; // <-- IMPORTANT
+      }),
     )
     .pipe(
-      replace(/href="(.{0,10})node_modules/g, 'href="$1assets/libs')
+      nunjucksRender({
+        path: ['src'],
+      }),
     )
     .pipe(
-      replace(/src="(.{0,10})node_modules/g, 'src="$1assets/libs')
+      replace(/href="(.{0,10})node_modules/g, 'href="$1assets/libs'),
+    )
+    .pipe(
+      replace(/src="(.{0,10})node_modules/g, 'src="$1assets/libs'),
     )
     .pipe(useref())
-    .pipe(cached())
     .pipe(gulpif('*.js', uglify()))
     .pipe(gulpif('*.css', cssnano({ svgo: false })))
     .pipe(gulp.dest(paths.dist.base.dir));
@@ -286,12 +287,11 @@ gulp.task(
       'clean:dist',
       'copy:all',
       'copy:libs',
-      'fileinclude',
+      'nunjucks',
       'scss',
       'js',
       'jsPages',
-      'html'
-    )
-    //gulp.parallel('browsersync', 'watch')
-  )
+    ),
+    gulp.parallel('browsersync', 'watch'),
+  ),
 );

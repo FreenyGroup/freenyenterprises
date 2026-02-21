@@ -11,12 +11,12 @@
       800,
       function () {
         $('.preloader').css('display', 'none');
-      }
+      },
     );
 
-  $('select').niceSelect(),
+  ($('select').niceSelect(),
     // aos
-    AOS.init();
+    AOS.init());
 
   $('.video-icon').lightcase();
 
@@ -214,7 +214,61 @@
       },
     },
   });
+  function initMobileSwiper() {
+    document.querySelectorAll('.package-slider').forEach((slider) => {
+      if (window.innerWidth < 992 && !slider.swiper) {
+        new Swiper(slider, {
+          slidesPerView: 1,
+          spaceBetween: 20,
+          loop: true,
+          navigation: {
+            nextEl: slider.querySelector('.slider-next'),
+            prevEl: slider.querySelector('.slider-prev'),
+          },
+        });
+      }
 
+      if (window.innerWidth >= 992 && slider.swiper) {
+        slider.swiper.destroy(true, true);
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initMobileSwiper);
+  window.addEventListener('resize', initMobileSwiper);
+
+  /*
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.package-slider').forEach((slider) => {
+      new Swiper(slider, {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+          nextEl: slider.querySelector('.slider-next'),
+          prevEl: slider.querySelector('.slider-prev'),
+        },
+        autoplay: {
+          speeds: 2000,
+          delay: 4000,
+        },
+        speed: 1000,
+        breakpoints: {
+          991: {
+            slidesPerView: 3,
+          },
+          767: {
+            slidesPerView: 2,
+          },
+          575: {
+            slidesPerView: 1,
+          },
+        },
+      });
+    });
+  });
+  */
+  /*
   var swiper = new Swiper('.package-slider', {
     slidesPerView: 3,
     spaceBetween: 30,
@@ -292,7 +346,7 @@
       },
     },
   });
-
+  */
   var swiper = new Swiper('.client-slider', {
     slidesPerView: 2,
     spaceBetween: 30,
@@ -605,7 +659,7 @@
         {
           width: $(this).attr('data-perc'),
         },
-        8000
+        8000,
       );
     $(this)
       .find('.label')
@@ -613,7 +667,7 @@
         {
           left: $(this).attr('data-perc'),
         },
-        8000
+        8000,
       );
   });
 

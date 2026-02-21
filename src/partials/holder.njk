@@ -1,0 +1,787 @@
+{% set uberCars = vehicles | selectattr("category", "equalto", "uber") | list %}
+    {% set suvCars = vehicles | selectattr("category", "equalto", "suv") | list %}
+    {% set luxuryCars = vehicles | selectattr("category", "equalto", "luxury") | list %}
+
+    <section class="package-section section--bg ptb-120">
+      <div class="package-element-one">
+        <img src="assets/images/element/element-24.webp" alt="element">
+      </div>
+      <div class="package-element-two">
+        <img src="assets/images/element/element-1.webp" alt="element">
+      </div>
+      <div class="container">
+
+        <!-- Uber / Economy Vehicles -->
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <span class="sub-title text-white"><span>Freeny Enterprise LLC</span> Vehicle Rentals</span>
+              <h2 class="section-title">Economy Vehicles</h2>
+            </div>
+          </div>
+        </div>
+        {% set cars = uberCars %}
+        {% set sliderClass = "package-slider" %}
+        {% include "partials/cards-grid.njk" %}
+
+
+        <!-- SUV Vehicles -->
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <h2 class="section-title mt-4">SUV Vehicles</h2>
+            </div>
+          </div>
+        </div>
+        {% set cars = suvCars %}
+        {% set sliderClass = "package-slider-2" %}
+        {% include "partials/cards-grid.njk" %}
+
+
+        <!-- Luxury Vehicles -->
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <h2 class="section-title mt-4">Luxury Vehicles</h2>
+            </div>
+          </div>
+        </div>
+        {% set cars = luxuryCars %}
+        {% set sliderClass = "package-slider-3" %}
+        {% include "partials/cards-grid.njk" %}
+
+      </div>
+      <div class="package-element-three">
+        <img src="assets/images/element/element-24.webp" alt="element">
+      </div>
+    </section>
+
+
+
+    /*** Under Here is the original Car Swiper Section That Worked **/
+
+
+     <section class="package-section section--bg ptb-120">
+      <div class="package-element-one">
+        <img src="assets/images/element/element-24.webp" alt="element">
+      </div>
+      <div class="package-element-two">
+        <img src="assets/images/element/element-1.webp" alt="element">
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <span class="sub-title text-white"><span>Freeny Enterprise LLC</span> Vehicle Rentals</span>
+              <h2 class="section-title">Economy Vehicles</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            <div class="package-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/toyota-corolla.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Toyota Corolla</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $40/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/toyota-prius.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Toyota Prius</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $30/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/kia-optima.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Kia Optima</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $40/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/kia-rio.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Kia Rio</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $40/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/hyundai-elantra.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Hyundai Elantra</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $40/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/hyundai-accent.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Hyundai Accent</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $40/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="slider-next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <h2 class="section-title mt-4">SUV Vehicles</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            <div class="package-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/toyota-highlander.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Toyota Highlander</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">8 Seats</span>
+                        <span class="price">Price: $50/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/hyundai-tucson.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Hyundai Tucson</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $50/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/kia-sorento.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Kia Sorento</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">7 Seats</span>
+                        <span class="price">Price: $50/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/chevrolet-suburban.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Chevrolet Suburban</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">8 Seats</span>
+                        <span class="price">Price: $120/ day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/5-7-passenger-minivan.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">5-7 Passenger Minivan</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5-7 Seats</span>
+                        <span class="price">Contact for pricing</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/6-14-passenger-van.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">6-14 Passenger Van</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">6-14 Seats</span>
+                        <span class="price">Price: $200/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="slider-next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12 text-center">
+            <div class="section-header white">
+              <h2 class="section-title mt-4">Luxury Vehicles</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
+            <div class="package-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/mercedes-c300.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Mercedes-Benz C300</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $75/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/mercedes-s580.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Mercedes-Benz S580</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">5 Seats</span>
+                        <span class="price">Price: $300/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="charter-item">
+                    <div class="charter-thumb">
+                      <img src="assets/images/charter/cadillac-escalade.webp" alt="charter">
+                    </div>
+                    <div class="charter-content">
+                      <h3 class="title"><a href="cars.html">Cadillac Escalade</a></h3>
+                      <span class="sub-title">Automatic</span>
+                      <div class="charter-meta">
+                        <span class="seat">8 Seats</span>
+                        <span class="price">Price: $300/day</span>
+                      </div>
+                      <div class="charter-btn">
+                        <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="slider-next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="package-element-three">
+        <img src="assets/images/element/element-24.webp" alt="element">
+      </div>
+    </section>
+
+
+
+    <!-- Original Agreement HERE -->
+
+    <p>1. Payment and Deposit: As a standard practice, renters are required to pay the weekly rental fee along
+            with a
+            deposit
+            equivalent to the amount of the weekly payment. We will need to keep a card on file and also require a copy
+            of
+            your
+            driver’s license for our records. Prices are non negotiable.</p>
+            <h3>Car prices (insurance not included):</h3>
+          <p>
+            <ul class="">
+              <li class="list-group-item bg-transparent">2023 Kia Rio - ($310/week plus $310 Deposit)</li>
+              <li class="list-group-item bg-transparent">2024, 2022 and 2020 Corolla/Camry - ($310/week plus $310 Deposit)</li>
+              <li class="list-group-item bg-transparent">2014 and 2015 Toyota Prius - ($260/week plus $260 Deposit)</li>
+              <li class="list-group-item bg-transparent">2018 and 2019 Hyundai Tucson - ($260/week and $260 Deposit)</li>
+              <li class="list-group-item bg-transparent">2016, 2017 and 2020 Hyundai Elantra, Accent - ($260/week and $260 Deposit)</li>
+              <li class="list-group-item bg-transparent">2014 and 2017 Kia Optima  - ($210/week and $210 Deposit)</li>
+              <li class="list-group-item bg-transparent">2017 Toyota Sienna - ($260/week and $260 Deposit)</li>
+              <li class="list-group-item bg-transparent">2011, 2012 and 2013 Toyota Prius - ($210/week and $210 Deposit)</li>
+              <li class="list-group-item bg-transparent">2021 Toyota Sienna Hybrid and 2020 Toyota Prius - ($360/week and $360 Deposit)</li>
+              <li class="list-group-item bg-transparent">2020 and 2022 Cadillac XT6 without Uber Black - ($410/week and $410 Deposit)</li>
+              <li class="list-group-item bg-transparent">2022 and 2023 Chevy Malibu - ($310/week plus $310 Deposit)</li>
+              <li class="list-group-item bg-transparent">2016, 2017, 2018, 2019, 2020 and 2022 Cadillac CT4, CT5, CT6 - ($360/week and $360 Deposit)</li>
+            </ul>
+            <br>
+            <h3>Uber Black Prices (insurance included):</h3>
+            <ul>
+              <li class="list-group-item bg-transparent">2020 and 2022 Cadillac XT6 with Uber Black - ($660/week and $660 Deposit)</li>
+              <li class="list-group-item bg-transparent">2022 and 2023 chevy suburban with Uber Black - ($760/week and $760 Deposit)</li>
+              <li class="list-group-item bg-transparent">2025 chevy suburban with Uber Black - ($810/week and $810 Deposit)</li>
+            </ul>
+            <br>
+            <h3>ARTICLE 1: DEFINITIONS AND INTERPRETATIONS</h3>
+            <h4><strong>1.1</strong> Defined Terms. For purposes of this Agreement, the following terms shall have the meanings set forth below:</strong></h4>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent">"Vehicle" means the motor vehicle described in the Vehicle Information section above, including all original and
+              replacement parts, accessories, tires, spare tires, tools, equipment, keys, key fobs, remote devices, registration
+              documents, insurance cards, manuals, and any other items delivered with or subsequently added to the Vehicle. The term
+              Vehicle shall also include any substitute or replacement vehicle provided by the Company to the Renter during the rental
+              period for any reason whatsoever.</li>
+              <li class="list-group-item bg-transparent">"Renter" means the individual(s) identified in the Renter Information section of this Agreement who is legally
+              authorized to operate the Vehicle under applicable law and has signed this Agreement as a contracting party.</li>
+              <li class="list-group-item bg-transparent">"Authorized Driver" means any person specifically listed on this Agreement or subsequently approved in writing by the
+              Company who is legally licensed to operate the Vehicle and authorized to do so under this Agreement.</li>
+              <li class="list-group-item bg-transparent">"Company" or "Owner" means Freeny Enterprise LLC, a Virginia limited liability company, and its successors, assigns,
+              officers, employees, and authorized agents.</li>
+              <li class="list-group-item bg-transparent">"Rental Period" means the period beginning on the Rental Start Date specified above and continuing until the Vehicle is
+              physically returned to the Company's designated location and accepted by an authorized Company representative during
+              normal business hours, or until this Agreement is otherwise terminated in accordance with its terms.</li>
+              <li class="list-group-item bg-transparent">"Physical Damage" means any loss, damage, or diminution in value to the Vehicle arising from any cause whatsoever,
+              including but not limited to collision, rollover, fire, theft, vandalism, weather events, acts of nature, mechanical
+              failure resulting from misuse or neglect, glass breakage, or any other event that reduces the market value,
+              functionality, or appearance of the Vehicle.</li>
+              <li class="list-group-item bg-transparent">"Loss of Use" means the Company's actual or estimated loss of rental income during any period in which the Vehicle is
+              unavailable for rental due to damage, required maintenance, inspection, repair, or replacement necessitated by the
+              Renter's use or any incident occurring during the Rental Period. Loss of Use shall be calculated at the daily equivalent
+              of the weekly rental rate (weekly rate divided by 7) multiplied by the number of days the Vehicle is out of service.</li>
+              <li class="list-group-item bg-transparent">"Charges" means all fees, costs, and expenses of any kind payable by the Renter under this Agreement, including but not
+              limited to rental fees, security deposits, processing fees, late fees, damage charges, cleaning fees, administrative
+              fees, towing charges, storage fees, traffic citations, toll violations, parking tickets, legal fees, court costs,
+              collection costs, and any other amounts owed to the Company.</li>
+              <li class="list-group-item bg-transparent">"Permitted Area" means the geographic area consisting of the District of Columbia, the Commonwealth of Virginia, and the
+              State of Maryland, within which the Renter is authorized to operate the Vehicle unless otherwise expressly authorized in
+              writing by the Company.</li>
+              <li class="list-group-item bg-transparent">"Normal Business Hours" means Monday through Friday, 9:00 AM to 5:00 PM Eastern Time, excluding federal holidays
+              observed by the Company.</li>
+            </ul>
+            <br>
+          <p><strong>1.2</strong> - Entire Agreement. This document, together with any written addenda or amendments executed by both parties, constitutes
+          the complete and exclusive agreement between the parties concerning the rental of the Vehicle and supersedes all prior
+          negotiations, representations, understandings, and agreements, whether oral or written, express or implied. Any
+          modification to this Agreement must be in writing and signed by both parties.
+          </p>
+
+          <p><strong>1.3</strong> Interpretation. Unless the context clearly requires otherwise: (a) the singular includes the plural and vice versa;
+          (b) "including" means "including without limitation"; (c) references to "Article" or "Section" refer to articles and
+          sections of this Agreement; (d) headings are for convenience only and do not affect interpretation; and (e) any
+          ambiguity shall not be construed against the drafting party.</p>
+          <h3>ARTICLE 2: PAYMENT TERMS AND FINANCIAL OBLIGATIONS</h3>
+
+          <p><strong>2.1</strong> Weekly Rental Fee. The Renter shall pay the weekly rental fee specified in the Rental Terms section above. The
+          minimum rental period is one (1) week, billed at the weekly rate stated in this Agreement. The weekly rental rate is
+          non-negotiable and represents the minimum charge for the rental regardless of actual usage or early return.</p>
+
+          <p><strong>2.2</strong> Non-Refundable Nature of Weekly Payment. Once the weekly rental payment has been made and accepted by the Company,
+          it is fully earned and non-refundable under any circumstances. If the Renter elects to return the Vehicle before the
+          expiration of a paid weekly rental period, no refund, credit, or proration shall be provided for unused days. This
+          includes early return due to dissatisfaction, change of plans, mechanical issues (unless caused by the Company's gross
+          negligence), or any other reason. The Renter acknowledges that this non-refundable provision is a material inducement to
+          the Company's entry into this Agreement and is agreed to in exchange for the favorable weekly rate offered.</p>
+
+          <p><strong>2.3</strong> Security Deposit. A refundable security deposit equal to one (1) week's rent shall be due at the time of execution
+          of this Agreement. The security deposit shall be held by the Company as security for the Renter's full and faithful
+          performance of all obligations under this Agreement, including but not limited to payment of rent, return of the Vehicle
+          in acceptable condition, and compliance with all terms.</p>
+
+          <p><strong>2.4</strong> Deposit Refund and Deductions. The security deposit shall be refunded to the Renter within three 3 weeks following
+          the return of the Vehicle, completion of final inspection, and resolution of any outstanding charges, less any
+          deductions for: Physical Damage to the Vehicle, its parts, or accessories; Loss of Use damages; Cleaning fees (interior
+          or exterior); Unpaid rental fees or late charges; Traffic violations, tolls, or parking citations; Missing keys,
+          equipment, or accessories; Fuel charges; Administrative fees; Any other amounts owed under this Agreement. The Company
+          shall provide written documentation (including photographs, invoices, or receipts where applicable) of any deductions
+          made from the security deposit. If damages or charges exceed the security deposit, the Renter remains liable for the
+          full amount.</p>
+
+          <p><strong>2.5</strong> Payment Processing Fee. When a security deposit is collected via credit card, debit card, or third-party electronic
+          payment processor (such as Stripe), an additional processing fee of Ten Dollars ($10.00) shall be added to the deposit
+          charge to cover actual third-party transaction fees incurred by the Company. For example: A $300 security deposit will
+          be charged as $310 ($300 refundable + $10 non-refundable processing fee); A $250 security deposit will be charged as
+          $260 ($250 refundable + $10 non-refundable processing fee). The Ten Dollar ($10.00) processing fee is non-refundable
+          under all circumstances and represents the actual cost incurred by the Company for processing the transaction through
+          third-party payment processors. This processing fee shall not apply if payment is made via Zelle, direct bank transfer
+          (ACH), or another fee-free electronic transfer method approved in advance by the Company.</p>
+
+          <p><strong>2.6</strong> Payment Method Requirements. All payments shall be made only by valid credit card or debit card in good standing.
+          The payment card must: Be in the Renter's name OR in the name of a third party who has expressly authorized such use in
+          accordance with Section 2.7; By a Visa, Mastercard, American Express, or Discover card (no prepaid cards, gift cards, or
+          virtual cards); Have sufficient available credit or funds to cover all anticipated charges; Remain active and on file
+          with the Company throughout the Rental Period and for a period of thirty (30) days thereafter.</p>
+
+          <p><strong>2.7</strong> Third-Party Payment Card Authorization. If the Renter provides or uses a credit card or debit card belonging to a
+          third party (including family members, friends, business associates, employers, or any other person), the Renter
+          expressly represents, warrants, and confirms that: They have obtained full, valid, informed, voluntary, and unambiguous
+          authorization from the cardholder for the Company to charge said card at any time during or after the Rental Period for
+          all amounts owed under this Agreement; The cardholder is aware of and consents to all potential charges including rental
+          fees, damages, violations, fees, and other expenses; The Renter accepts full personal financial responsibility for all
+          such transactions; Any objections, disputes, chargebacks, or complaints by the third-party cardholder shall be directed
+          solely to the Renter, not to the Company; The cardholder's consent to such charges is deemed given through the Renter's
+          submission and use of the card; The Company shall have the right to charge the card for any outstanding balance,
+          damages, fees, or other charges incurred during or discovered after the Rental Period without additional notice to the
+          Renter or cardholder. The Renter agrees to indemnify and hold harmless the Company from any claims, disputes, or
+          chargebacks initiated by the cardholder.</p>
+
+          <p><strong>2.8</strong> Comprehensive Payment Card Authorization. By signing this Agreement and providing a valid payment method, the Renter
+          hereby authorizes the Company to charge any and all payment cards on file for all amounts due under this Agreement,
+          including but not limited to: Base rental fees for the initial rental period; Additional rental days or extended rental
+          periods; Security deposits and processing fees; Late return fees and penalties; Traffic citations, toll violations, and
+          parking tickets (including administrative fees); Cleaning fees (interior detailing, exterior washing, odor removal);
+          Damage charges (collision, scratches, dents, interior damage, glass, mechanical); Loss of Use damages; Towing expenses
+          and recovery costs; Storage or impound fees; Key or equipment replacement costs; Fuel charges; Insurance deductibles (if
+          applicable); Administrative processing fees; Legal fees, court costs, and collection costs; Any other charges or
+          expenses arising from or related to the Renter's use of the Vehicle. This authorization is broad and encompasses all
+          financial obligations of the Renter under this Agreement. Charges may be processed immediately or at any time up to
+          thirty (30) days after return of the Vehicle.</p>
+
+          <p><strong>2.9</strong> Payment Dispute Waiver and Chargeback Prohibition. The Renter expressly and irrevocably waives and relinquishes any
+          right to initiate a chargeback, payment dispute, reversal, or similar action with their financial institution for any
+          charge that is authorized under and falls within the scope of this Agreement. The Renter agrees that: Any dispute
+          regarding charges must be resolved directly with the Company through the dispute resolution procedures set forth in
+          Article 13; Initiating a chargeback rather than resolving the matter directly with the Company constitutes a material
+          breach of this Agreement; Any chargeback attempt may result in: (a) immediate referral to a collection agency; (b)
+          assessment of additional administrative fees up to $150.00; (c) legal action to recover the disputed amount plus
+          attorneys' fees and costs; and (d) termination of any future rental privileges; The Company will provide this signed
+          Agreement and supporting documentation to payment processors as proof of authorization.</p>
+
+          <p><strong>2.10</strong> Documentation of Charges. All charges assessed by the Company shall be supported by appropriate documentation,
+          which may include: Photographs of damage (time-stamped and date-stamped when possible); Repair invoices or estimates
+          from qualified repair facilities; Police reports or accident reports; Traffic citations, toll notices, or parking
+          tickets (official copies); Cleaning invoices or before/after photographs; Towing or storage receipts; Expert appraisals
+          or diminished value reports. Upon request, the Company shall provide copies of such documentation to the Renter within
+          seven (7) business days. Documentation may be provided electronically via email.</p>
+
+          <p><strong>2.11</strong> Outstanding Balance at Return. All outstanding balances known at the time of return must be paid in full prior to
+          or at the time the Vehicle is returned. Outstanding balances include: Any unpaid rental fees for the current or extended
+          rental period; Any known damage charges (as determined by initial inspection); Any cleaning fees; Any traffic violations
+          or tolls of which the Renter has been notified. Failure to pay all known amounts due shall result in: The Company's
+          right to refuse acceptance of the Vehicle return until payment is made; Continued accrual of rental charges at the daily
+          rate until all balances are paid; Assessment of late fees at the rate of five percent (5%) per month on unpaid balances;
+          Additional administrative fees of $50.00; Potential legal action to recover amounts owed plus attorneys' fees and
+          collection costs.</p>
+
+          <p><strong>2.12</strong> Post-Rental Charges and Continuing Authorization. The Renter acknowledges that certain charges may not be
+          discovered or billed until after the Vehicle is returned, including: Traffic citations or toll violations received by
+          mail (typically 2-8 weeks after the incident); Damage discovered during detailed post-rental inspection; Mechanical
+          issues resulting from misuse that become apparent after return; Citations or violations captured by automated systems
+          (red light cameras, speed cameras); Insurance claims or third-party liability claims. The Renter agrees that: The
+          payment card(s) on file shall remain authorized for charging for a minimum of ninety (90) days following return of the
+          Vehicle; The Renter shall maintain sufficient funds or available credit on such card(s) during this period; The Company
+          may charge such cards for post-rental charges without additional notice (though the Company will make reasonable efforts
+          to notify the Renter); If payment cannot be collected from the card(s) on file, the Company may pursue collection
+          through direct invoice, collection agencies, or legal action.</p>
+
+          <p><strong>2.13</strong> Late Payment and Interest. Any amount not paid when due under this Agreement shall accrue interest at the rate of
+          ten percent (10%) per month (or the maximum rate permitted by Virginia law, whichever is less) from the due date until
+          paid in full. Late fees do not limit the Company's other remedies.</p>
+
+          <p><strong>2.14</strong> Application of Payments. If the Renter makes a partial payment insufficient to cover all amounts owed, the Company
+          may apply such payment in the following order of priority: (1) collection costs and legal fees; (2) late fees and
+          interest; (3) administrative fees; (4) damage charges and Loss of Use; (5) traffic violations and tolls; (6) cleaning
+          fees; (7) rental fees; and (8) security deposit refund.</p>
+
+          <h3>ARTICLE 3: PRE-RENTAL REQUIREMENTS AND DOCUMENTATION</h3>
+          <p><strong>3.1</strong> Required Documentation. Before taking possession of the Vehicle, the Renter must provide: Valid U.S. driver's
+          license; Valid payment card; Proof of full coverage insurance with Freeny Enterprise LLC listed as lienholder or
+          additional insured; Any other documentation reasonably requested.</p>
+          <p><strong>3.2</strong> Minimum Age Requirement. The Renter must be at least twenty-one (21) years of age with a valid driver's license held
+          for a minimum of two (2) years.</p>
+          <p><strong>3.3</strong> Accuracy of Information. The Renter represents and warrants that all information provided is true, accurate,
+          complete, and not misleading. Material misrepresentation may result in immediate termination and forfeiture of all
+          payments.</p>
+
+      <h3>ARTICLE 4: VEHICLE CONDITION, INSPECTION, AND RETURN</h3>
+      <p><strong>4.1</strong> Pre-Rental Inspection. Prior to accepting the Vehicle, the Renter shall inspect the exterior,
+        interior, mechanical components, and accessories, and conduct a test drive.</p>
+      <p><strong>4.2</strong> Return Condition. The Vehicle must be returned in substantially the same condition as received,
+        ordinary wear and tear excepted.</p>
+      <p><strong>4.3</strong> Cleanliness Standards. If delivered clean, the Vehicle must be returned clean. Cleaning fee of
+        $200 applies if returned dirty. Smoking/vaping odor removal: $300 minimum.</p>
+      <p><strong>4.4</strong> Keys and Equipment. All keys, fobs, documents, and equipment must be returned. Loss fees: Keys
+        $200-$500; Registration/insurance cards $25 each.</p>
+
+      <h3>ARTICLE 5: INSURANCE REQUIREMENTS AND LIABILITY</h3>
+      <p><strong>5.1</strong> Mandatory Full Coverage Insurance. The Renter must maintain comprehensive and collision coverage
+        with deductibles not exceeding $1,000 throughout the entire Rental Period.</p>
+      <p><strong>5.2</strong> Lienholder Requirement. Freeny Enterprise LLC MUST be listed as lienholder or additional insured
+        on the Renter's policy.</p>
+      <p><strong>5.3</strong> Insurance Lapse - Material Breach. Failure to maintain insurance results in: Immediate
+        termination; Forfeiture of security deposit; $500 penalty; Liability for all damages during non-coverage; Vehicle
+        recovery rights.</p>
+      <p><strong>5.4</strong> Company Does Not Provide Insurance. The Company does NOT provide any insurance coverage. The
+        Renter is solely responsible for obtaining coverage.</p>
+      <p><strong>5.5</strong> Renter's Full Liability. The Renter is personally liable for all claims, damages, losses,
+        including bodily injury, property damage, vehicle damage, deductibles, Loss of Use, diminished value, and legal fees.
+      </p>
+      <p><strong>5.6</strong> Accident Procedures. In the event of an accident: Call 911 if injuries; Contact Company
+        immediately; Document scene with photos; Exchange information; Obtain police report if required; File insurance claim
+        within 24 hours; ALL repairs must be at Arlington Auto Service, LLC or Company-approved facility.</p>
+      <p><strong>5.7</strong> Indemnification. The Renter agrees to indemnify and hold harmless the Company from all claims
+        arising from the Renter's use of the Vehicle, except for Company's gross negligence or intentional misconduct.</p>
+
+      <h3>ARTICLE 6: TRAFFIC VIOLATIONS, TOLLS, AND CITATIONS</h3>
+      <p><strong>6.1</strong> Renter's Sole Responsibility. The Renter is solely responsible for ALL violations, tickets,
+        tolls, and citations incurred during the Rental Period.</p>
+      <p><strong>6.2</strong> Company Payment of Violations. When violations are mailed to the Company, the Company will pay
+        them to avoid penalties, but the Renter must reimburse the Company.</p>
+      <p><strong>6.3</strong> Waiver of Dispute Rights. The Renter WAIVES all rights to dispute violations as between Renter
+        and Company. Violations paid by Company are final and non-disputable.</p>
+      <p><strong>6.4</strong> Administrative Processing Fees. In addition to the violation amount, administrative fees apply:
+        Up to $100: $40 fee; $100-$200: $60 fee; $200-$500: $80 fee; Over $500: $100 fee.</p>
+      <p><strong>6.5</strong> Toll Policy. Company does not provide E-ZPass. If tolls charge to Company's account: $10 per
+        toll transaction plus toll amount.</p>
+
+      <h3>ARTICLE 7: GEOGRAPHIC RESTRICTIONS AND GPS MONITORING</h3>
+      <p><strong>7.1</strong> Permitted Area. Vehicle use is limited to DC, Virginia, and Maryland only.</p>
+      <p><strong>7.2</strong> Out-of-Area Penalty. Unauthorized out-of-area travel: $500 penalty plus all recovery costs.</p>
+      <p><strong>7.3</strong> GPS Tracking. The Company may use GPS to monitor location, route, speed, and compliance. Renter
+        consents to GPS tracking.</p>
+      <p><strong>7.4</strong> GPS Tampering Prohibited. Tampering with GPS: $500 penalty, equipment replacement cost,
+        immediate termination, potential criminal prosecution.</p>
+
+      <h3>ARTICLE 8: VEHICLE DAMAGE, REPAIR, AND MAINTENANCE</h3>
+      <p><strong>8.1</strong> Renter's Comprehensive Liability. The Renter is liable for ALL damage regardless of fault,
+        including collision, scratches, dents, interior damage, mechanical damage, glass damage, tire damage, theft,
+        vandalism, and weather damage.</p>
+      <p><strong>8.2</strong> Specific Damage Fees. Dashboard damage: $200 minimum; Smoking/vaping: $300 minimum; Excessive
+        cleaning: $200; Biological contamination: $300 minimum; Keys: $200-$500.</p>
+      <p><strong>8.3</strong> Mandatory Repair Facility. ALL repairs must be at Arlington Auto Service, LLC or pre-approved
+        facility. NO EXCEPTIONS.</p>
+      <p><strong>8.4</strong> Unauthorized Repairs. No reimbursement for unauthorized repairs. Renter liable for correcting
+        improper work.</p>
+      <p><strong>8.5</strong> Oil Change Requirements. Renter must monitor maintenance and notify Company when due. All
+        service at approved facility only.</p>
+      <p><strong>8.6</strong> Overdue Maintenance Penalty. If oil change is overdue by 1,000+ miles: $200 negligence fee.</p>
+      <p><strong>8.7</strong> Loss of Use. Renter liable for loss of rental income during repair period: Daily rate × days out
+        of service.</p>
+      <p><strong>8.8</strong> Diminished Value. Renter liable for reduction in vehicle value even after repairs if accident is
+        reported.</p>
+        <h3>ARTICLE 9: ACCIDENT REPORTING AND EMERGENCY PROCEDURES</h3>
+        <p><strong>9.1</strong> Immediate Notification. Contact Company immediately at 703-599-1585, 571-405-9196, or
+          571-733-3339 within 2 hours of any accident.</p>
+        <p><strong>9.2</strong> Documentation. Take photos, exchange information, obtain police report if required or requested.
+        </p>
+        <p><strong>9.3</strong> Insurance Claim. File claim within 24 hours listing Freeny Enterprise LLC as lienholder.</p>
+
+        <h3>ARTICLE 10: PROHIBITED USES AND RESTRICTIONS</h3>
+        <p><strong>10.1</strong> Unauthorized Drivers Prohibited. Only Renter and listed Authorized Drivers may operate the
+          Vehicle.</p>
+        <p><strong>10.2</strong> Impaired Driving Prohibited. No operation under influence of alcohol, drugs, or impairing
+          medications.</p>
+        <p><strong>10.3</strong> Prohibited Activities. No racing, off-road use, towing, illegal transport, commercial use, or
+          violation of laws.</p>
+        <p><strong>10.4</strong> Smoking Prohibited. No smoking or vaping. Violation: $300 cleaning fee.</p>
+        <p><strong>10.5</strong> No Tampering. No tampering with odometer, GPS, or vehicle systems. Violation: immediate
+          termination, $500 penalty.</p>
+
+        <h3>ARTICLE 11: FEES AND CHARGES</h3>
+        <p><strong>11.1</strong> Late Return. Daily rate for each day late. If 24+ hours late: Daily rate + $50/day penalty.</p>
+        <p><strong>11.2</strong> Towing Fees. Renter pays all towing costs due to Renter's fault, violations, or recovery.</p>
+        <p><strong>11.3</strong> Lockout/Jump Start. $75 per service if due to Renter's actions.</p>
+        <p><strong>11.4</strong> Collection Costs. Renter pays collection agency fees (25-40%), attorneys' fees, court costs if
+          collection necessary.</p>
+
+        <h3>ARTICLE 12: GOVERNING LAW AND DISPUTE RESOLUTION</h3>
+        <p><strong>12.1</strong> Governing Law. This Agreement is governed by Virginia law.</p>
+        <p><strong>12.2</strong> Venue. Exclusive venue in Fairfax County or Falls Church, Virginia courts.</p>
+        <p><strong>12.3</strong> JURY TRIAL WAIVER. BOTH PARTIES WAIVE THE RIGHT TO JURY TRIAL. This waiver is knowing,
+          voluntary, and intentional.</p>
+        <p><strong>12.4</strong> Attorneys' Fees. Prevailing party in any legal action recovers reasonable attorneys' fees and
+          costs.</p>
+        <p><strong>12.5</strong> Electronic Signatures. Electronic and paper signatures are equally valid under Virginia UETA
+          and federal E-SIGN Act.</p>
+        <p><strong>12.6</strong> Entire Agreement. This Agreement supersedes all prior agreements and understandings, oral or
+          written.</p>
+
+        <h3>ARTICLE 13: CONTACT INFORMATION AND BUSINESS HOURS</h3>
+        <p><strong>13.1</strong> Company Information. Freeny Enterprise LLC, 308 Hillwood Ave STE 350, Falls Church, VA 22046.
+          Phone: 703-599-1585, 571-405-9196, 571-733-3339.</p>
+        <p><strong>13.2</strong> Business Hours. Monday-Friday 9:00 AM - 5:00 PM Eastern Time. Closed weekends and federal
+          holidays.</p>
+        <p><strong>13.3</strong> After-Hours Limitations. No after-hours service except genuine emergencies.</p>
+
+        <h3>ARTICLE 14: PRIVACY, DATA PROTECTION, AND RECORDS</h3>
+        <p><strong>14.1</strong> Personal Information Collected. The Company collects: identification, contact, financial,
+          insurance, rental history, and GPS data.</p>
+        <p><strong>14.2</strong> Purposes. Data used for: contract performance, payment processing, legal compliance, claims
+          management, business protection, customer service.</p>
+        <p><strong>14.3</strong> Data Security. The Company implements administrative, technical, and physical safeguards to
+          protect data.</p>
+        <p><strong>14.4</strong> Permitted Disclosures. Data shared only with: law enforcement (when required), insurance
+          companies, collection agencies, service providers, business successors.</p>
+        <p><strong>14.5</strong> Retention. Data retained 3-7 years for tax/legal compliance, longer if litigation or unpaid
+          debts.</p>
+        <p><strong>14.6</strong> Virginia Consumer Data Protection Act Rights. Subject to limitations: rights to confirm,
+          access, correct, delete, and data portability.</p>
+        <p><strong>14.7</strong> Deletion Limitations. NO deletion while: active rental, unpaid balances, pending claims,
+          unresolved disputes, ongoing collection, or legal retention required.</p>
+        <p><strong>14.8</strong> Consent. Renter consents to collection, use, storage, and limited disclosure of personal
+          information as described.</p>
+
+        <h3>ARTICLE 15: TERMINATION AND DEFAULT</h3>
+        <p><strong>15.1</strong> Events of Default. Material breach includes: insurance violation, payment default, unauthorized
+          use, false information, criminal activity, failure to return, vehicle abuse, or any other material breach.</p>
+        <p><strong>15.2</strong> Immediate Termination. Company may immediately terminate upon default without advance notice.
+        </p>
+        <p><strong>15.3</strong> Immediate Return Required. Upon termination, Renter must return Vehicle within 2 hours. Failure
+          may result in stolen vehicle report.</p>
+        <p><strong>15.4</strong> No Refund Upon Breach. All payments and security deposit forfeited. Renter remains liable for
+          all damages and costs.</p>
+        <p><strong>15.5</strong> Self-Help Recovery. Company may use GPS tracking, enter property, and engage repossession to
+          recover Vehicle. Renter waives trespass claims for good-faith recovery.</p>
+        <p><strong>15.6</strong> Criminal Prosecution. Failure to return may result in criminal charges including Unauthorized
+          Use of Motor Vehicle (felony), Embezzlement (felony), or Grand Larceny (felony).</p>
+
+        <h3>ARTICLE 16: MISCELLANEOUS PROVISIONS</h3>
+        <p><strong>16.1</strong> Time is of the Essence. All deadlines are strict and material terms.</p>
+        <p><strong>16.2</strong> Independent Contractors. The parties are independent contractors, not partners, agents, or
+          employees.</p>
+        <p><strong>16.3</strong> Severability. If any provision is invalid, court requested to modify to be enforceable, or
+          sever while maintaining remaining provisions.</p>
+        <p><strong>16.4</strong> CONTRACT MODIFICATIONS & ELECTRONIC AGREEMENT. Freeny Enterprise LLC reserves the right to
+          modify, add, remove, or replace any and all rates, fees, policies, terms, and conditions of this Agreement at any time
+          with or without notice. All modifications are binding and enforceable immediately upon implementation. Continued use
+          of the vehicle after notification constitutes acceptance of modified terms. For active rentals, material changes to
+          rates will be communicated via email or text to the contact information provided by Renter. Non-material changes
+          (policies, procedures, vehicle rules, operational guidelines) are effective immediately upon posting to our website or
+          written/electronic notification. ANY TERM OR CONDITION OF THIS AGREEMENT MAY BE CHANGED, MODIFIED, ADDED, OR REMOVED
+          BY FREENY ENTERPRISE LLC AT ITS SOLE DISCRETION. ALL SUCH CHANGES REMAIN FULLY VALID AND ENFORCEABLE REGARDLESS OF
+          WHEN MADE OR HOW COMMUNICATED. Freeny Enterprise LLC may: Suspend or terminate this rental immediately for violation
+          of terms, with full payment still due for the entire rental period; Remotely disable the vehicle or use GPS tracking
+          for recovery if payments are missed or terms are violated; Adjust the security deposit amount at any time based on
+          driving record, payment history, insurance status, or risk assessment; Modify vehicle assignments, substitute
+          comparable or upgraded vehicles, or recall the vehicle with 24 hours' notice for maintenance or fleet needs; Add fees
+          or surcharges for new services, fuel costs, tolls, violations, or operational expenses; Change any provision of this
+          Agreement including but not limited to rental duration, payment terms, insurance requirements, usage restrictions,
+          mileage limits, geographic boundaries, or liability allocations. For subscription or recurring rentals, this Agreement
+          renews automatically at the then-current rates. We may modify rates, vehicle assignments, or terms with 7 days'
+          notice. Continued possession of the vehicle constitutes acceptance of all modifications. Both paper and electronic
+          signatures are legally valid and enforceable. Renter acknowledges that all terms have been explained and understood;
+          Renter has had the opportunity to review and ask questions; Renter voluntarily accepts all current and future terms as
+          modified; Renter waives any right to challenge modifications; All modifications are binding and enforceable; Failure
+          to return the vehicle upon notification of changed terms, termination, or rental period end may result in additional
+          charges, late fees, and/or vehicle recovery at Renter's expense; Renter is responsible for all costs associated with
+          vehicle recovery including towing, storage, and administrative fees.</p>
