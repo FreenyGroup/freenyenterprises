@@ -292,6 +292,6 @@ gulp.task(
       'js',
       'jsPages',
     ),
-    gulp.parallel('browsersync', 'watch'),
+    //gulp.parallel('browsersync', 'watch'),
   ),
 );
