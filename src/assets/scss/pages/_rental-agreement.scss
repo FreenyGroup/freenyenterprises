@@ -1,0 +1,96 @@
+.rental-agreement-section {
+    background-color: #f3f4f6;
+    padding: 72px 0;
+}
+
+.rental-agreement-document {
+    max-width: 1080px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #d8d8d8;
+    box-shadow: 0 8px 28px rgba(32, 44, 57, 0.1);
+}
+
+.rental-agreement-document__header {
+    padding: 40px 48px 32px;
+    text-align: center;
+    border-bottom: 1px solid #d8d8d8;
+
+    .rental-agreement-document__eyebrow {
+        margin-bottom: 8px;
+        color: #555;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        margin-bottom: 12px;
+        color: #202c39;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    p {
+        color: #555;
+    }
+}
+
+.rental-agreement-document__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.rental-agreement-document__download {
+    background-color: #202c39;
+    border-color: #202c39;
+}
+
+.rental-agreement-document__viewer {
+    padding: 24px;
+    background-color: #f7f7f7;
+
+    iframe {
+        display: block;
+        width: 100%;
+        height: 900px;
+        border: 1px solid #d8d8d8;
+        background-color: #fff;
+    }
+}
+
+.rental-agreement-document__fallback {
+    margin: 16px 0 0;
+    color: #555;
+    text-align: center;
+
+    a {
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .rental-agreement-section {
+        padding: 40px 0;
+    }
+
+    .rental-agreement-document__header {
+        padding: 30px 22px 24px;
+
+        h2 {
+            font-size: 24px;
+        }
+    }
+
+    .rental-agreement-document__viewer {
+        padding: 12px;
+
+        iframe {
+            height: 700px;
+        }
+    }
+}
