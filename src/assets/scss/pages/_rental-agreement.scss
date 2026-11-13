@@ -11,6 +11,10 @@
     box-shadow: 0 8px 28px rgba(32, 44, 57, 0.1);
 }
 
+.rental-agreement-document + .rental-agreement-document {
+    margin-top: 40px;
+}
+
 .rental-agreement-document__header {
     padding: 40px 48px 32px;
     text-align: center;
