@@ -66,6 +66,11 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-xl-12">
+            {% include "partials/vehicle-pricing-notice.njk" %}
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-12">
             {% set cars = [] %}
             {% for car in vehicles %}
               {% if car.category == "uber" %}

@@ -14,7 +14,13 @@
 
             <div class="charter-meta">
               <span class="seat">{{ car.seats }}</span>
-              <span class="price">{{ car.price }}</span>
+              <div class="vehicle-price">
+                <span class="price">{{ car.price }}</span>
+                {% if car.price_current %}
+                  <span class="vehicle-price__detail">Now through Nov 30, 2026 (4.2% fee): {{ car.price_current }}</span>
+                  <span class="vehicle-price__detail">From Dec 1, 2026 (14.2% combined tax and fee): {{ car.price_december }}</span>
+                {% endif %}
+              </div>
             </div>
             <div class="charter-btn">
               <a href="booking.html"><i class="fa-solid fa-van-shuttle"></i> Start Booking</a>
